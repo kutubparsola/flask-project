@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNOZZ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 360px;
+        }
+
+        #container {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px 12px;
+            color: #1f1d1d;
+            font-size: 20px;
+        }
+
+        .graycolor {
+            color: rgb(62, 61, 61);
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .jobroles {
+            margin: 30px auto;
+            color: #757171;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Body padding to prevent overlap */
+        body {
+            padding-top: 60px;
+        }
+
+        /* Logo styling */
+        .navbar-brand img {
+            height: 40px;
+            width: 40px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center">
+                    <img src="http://127.0.0.1:8000/static/t-logo.png" alt="T Logo">
+                    TECHNOZZ
+                </a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <img src="http://127.0.0.1:8000/static/photo.jpeg.jpg" class="figure">
+
+    <br><br>
+
+    <div id="container">
+        <h2 class="graycolor" style="font-size: 50px;">About Us</h2>
+
+        <div class="row align-items-center">
+            <div class="col-md-8 text-start">
+                <p>Welcome to Technozz, your trusted partner in job recruitment! We connect talented professionals with
+                    top
+                    employers, ensuring the perfect match for both candidates and companies. Our platform simplifies the
+                    hiring process with seamless job postings, smart filtering, and personalized recommendations.
+                    Whether you're an
+                    employer looking for top talent or a job seeker aiming for your dream role, we've got you covered.
+                    Let’s build
+                    successful careers together!</p>
+            </div>
+            <div class="col-md-4">
+                <img src="http://127.0.0.1:8000/static/office.jpg" alt="colleagues" class="img-fluid rounded"
+                    style="height: 400px;">
+            </div>
+        </div>
+
+        <h2 style="font-size: 30px;" class="jobroles">Job Roles</h2>
+
+        {% for job in jobs %}
+        {% include 'code.html' %}
+        {% endfor %}
+
+        <br>
+
+        <a href="mailto:kutbuddinparsola89@gmail.com?subject=queries%20about%20contact%20details&body=my%20name%20is%20%3Cyour%20name%3E%0A%20%0Afor%20further%20queries%20i%20want%20you%20to%20contact%20me%20%3Cyour%20mobile%20number%3E"
+            type="button" class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 20px;">
+
+            Contact Us
+        </a>
+
+        <br><br>
+
+        {%include 'footer.html'%}
+    </div>
+
+</body>
+
+</html>
